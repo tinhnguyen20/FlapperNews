@@ -46,8 +46,14 @@ app.controller('MainCtrl', [
         };
 
         $scope.incrementUpvotes = function(post) {
+            console.log("comment upvoted")
+
             post.upvotes += 1;
         };
+
+        $scope.decrementUpvotes = function(post) {
+            post.upvotes -= 1;
+        }
 }]);
 
 app.controller('PostsCtrl', [
@@ -65,6 +71,17 @@ app.controller('PostsCtrl', [
                 upvotes: 0
             })
             $scope.body = '';
+        }
+
+        $scope.incrementUpvotes = function(comment) {
+            console.log("comment upvoted")
+            comment.upvotes += 1;
+        };
+
+        $scope.decrementUpvotes = function(comment) {
+            console.log("comment downvoted")
+
+            comment.upvotes -= 1;
         }
     }
 ]);
