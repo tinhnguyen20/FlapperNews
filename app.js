@@ -32,6 +32,12 @@ app.controller('MainCtrl', [
                 return;
             }
             // add website parsing, http://www.
+            if ($scope.link.indexOf("www.") == -1) {
+                $scope.link = "www." + $scope.link;
+            }
+            if ($scope.link.indexOf("https://")) {
+                $scope.link = "https://" + $scope.link;
+            }
             $scope.posts.push({
                 title: $scope.title, 
                 link: $scope.link, 
